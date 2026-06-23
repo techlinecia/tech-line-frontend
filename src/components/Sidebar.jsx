@@ -18,12 +18,14 @@ function Sidebar() {
 
   return (
     <>
-      <button
+        <button
         className="mobile-menu-btn"
         onClick={() => setAberto(!aberto)}
-      >
-        {aberto ? <X size={24} /> : <Menu size={24} />}
-      </button>
+        aria-label="Abrir menu"
+        >
+        <span className="mobile-menu-logo">TL</span>
+        {aberto ? <X size={22} /> : <Menu size={22} />}
+        </button>
 
       <aside className={`sidebar ${aberto ? 'open' : ''}`}>
         <h2>⚡ Tech Line</h2>
