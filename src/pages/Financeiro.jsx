@@ -878,10 +878,10 @@ function Financeiro() {
           'Nenhum lançamento cadastrado.'
         )}
 
-      {abaSelecionada === 'Parcelados' &&
+      {abaSelecionada === 'Parcelado' &&
         renderizarTabelaMovimentos(
           parcelados,
-          '💳 Lançamentos parcelados',
+          '💳 Lançamentos parcelado',
           'Nenhum lançamento parcelado cadastrado.'
         )}
 
