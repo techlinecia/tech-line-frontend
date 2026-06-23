@@ -21,12 +21,12 @@ function Dashboard() {
   const [contasFixas, setContasFixas] = useState([])
 
   async function carregarDados() {
-    const clientesRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/clientes')
-    const ordensRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/ordens')
-    const estoqueRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/estoque')
-    const financeiroRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/financeiro')
-    const vendasRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/vendas')
-    const contasRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/contas-fixas')
+    const clientesRes = await axios.get('https://tech-line-backend.onrender.com/clientes')
+    const ordensRes = await axios.get('https://tech-line-backend.onrender.com/ordens')
+    const estoqueRes = await axios.get('https://tech-line-backend.onrender.com/estoque')
+    const financeiroRes = await axios.get('https://tech-line-backend.onrender.com/financeiro')
+    const vendasRes = await axios.get('https://tech-line-backend.onrender.com/vendas')
+    const contasRes = await axios.get('https://tech-line-backend.onrender.com/contas-fixas')
 
     setClientes(clientesRes.data)
     setOrdens(ordensRes.data)
@@ -133,7 +133,7 @@ function Dashboard() {
           <button
             className="btn-primary"
             type="button"
-            onClick={() => window.open('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/backup', '_blank')}
+            onClick={() => window.open('https://tech-line-backend.onrender.com/backup', '_blank')}
           >
             💾 Backup
           </button>

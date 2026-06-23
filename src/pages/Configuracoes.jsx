@@ -25,7 +25,7 @@ function Configuracoes() {
   })
 
   async function carregarConfiguracoes() {
-    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/configuracoes')
+    const resposta = await axios.get('https://tech-line-backend.onrender.com/configuracoes')
 
     if (resposta.data && resposta.data.id) {
       setConfigId(resposta.data.id)
@@ -45,7 +45,7 @@ function Configuracoes() {
   }
 
   async function carregarUsuarios() {
-    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/usuarios')
+    const resposta = await axios.get('https://tech-line-backend.onrender.com/usuarios')
     setUsuarios(resposta.data)
   }
 
@@ -72,9 +72,9 @@ function Configuracoes() {
     event.preventDefault()
 
     if (configId) {
-      await axios.put(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/configuracoes/${configId}`, config)
+      await axios.put(`https://tech-line-backend.onrender.com/configuracoes/${configId}`, config)
     } else {
-      const resposta = await axios.post('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/configuracoes', config)
+      const resposta = await axios.post('https://tech-line-backend.onrender.com/configuracoes', config)
       setConfigId(resposta.data.id)
     }
 
@@ -91,7 +91,7 @@ function Configuracoes() {
     }
 
     try {
-      await axios.post('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/usuarios', usuarioForm)
+      await axios.post('https://tech-line-backend.onrender.com/usuarios', usuarioForm)
 
       setUsuarioForm({
         nome: '',
@@ -110,7 +110,7 @@ function Configuracoes() {
   async function excluirUsuario(id) {
     if (!confirm('Deseja excluir este usuário?')) return
 
-    await axios.delete(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/usuarios/${id}`)
+    await axios.delete(`https://tech-line-backend.onrender.com/usuarios/${id}`)
     carregarUsuarios()
   }
 

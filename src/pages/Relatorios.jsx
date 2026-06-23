@@ -9,11 +9,11 @@ function Relatorios() {
   const [vendas, setVendas] = useState([])
 
   async function carregarDados() {
-    const clientesRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/clientes')
-    const ordensRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/ordens')
-    const estoqueRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/estoque')
-    const financeiroRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/financeiro')
-    const vendasRes = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/vendas')
+    const clientesRes = await axios.get('https://tech-line-backend.onrender.com/clientes')
+    const ordensRes = await axios.get('https://tech-line-backend.onrender.com/ordens')
+    const estoqueRes = await axios.get('https://tech-line-backend.onrender.com/estoque')
+    const financeiroRes = await axios.get('https://tech-line-backend.onrender.com/financeiro')
+    const vendasRes = await axios.get('https://tech-line-backend.onrender.com/vendas')
 
     setClientes(clientesRes.data)
     setOrdens(ordensRes.data)

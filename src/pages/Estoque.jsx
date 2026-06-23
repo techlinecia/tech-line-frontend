@@ -99,9 +99,9 @@ function Estoque() {
     }
 
     if (produtoEditando !== null) {
-      await axios.put(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/estoque/${produtoEditando}`, dadosProduto)
+      await axios.put(`https://tech-line-backend.onrender.com/estoque/${produtoEditando}`, dadosProduto)
     } else {
-      await axios.post('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/estoque', dadosProduto)
+      await axios.post('https://tech-line-backend.onrender.com/estoque', dadosProduto)
     }
 
     setForm({
@@ -140,7 +140,7 @@ function Estoque() {
 
     if (!confirmar) return
 
-    await axios.delete(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/estoque/${id}`)
+    await axios.delete(`https://tech-line-backend.onrender.com/estoque/${id}`)
     carregarProdutos()
   }
 
