@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   LayoutDashboard,
@@ -7,56 +8,69 @@ import {
   ShoppingCart,
   DollarSign,
   BarChart3,
-  Settings
+  Settings,
+  Menu,
+  X
 } from 'lucide-react'
 
 function Sidebar() {
+  const [aberto, setAberto] = useState(false)
+
   return (
-    <aside className="sidebar">
-      <h2>⚡ Tech Line</h2>
+    <>
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setAberto(!aberto)}
+      >
+        {aberto ? <X size={24} /> : <Menu size={24} />}
+      </button>
 
-      <nav className="menu">
-        <Link to="/">
-          <LayoutDashboard size={18} />
-          Dashboard
-        </Link>
+      <aside className={`sidebar ${aberto ? 'open' : ''}`}>
+        <h2>⚡ Tech Line</h2>
 
-        <Link to="/clientes">
-          <Users size={18} />
-          Clientes
-        </Link>
+        <nav className="menu">
+          <Link to="/" onClick={() => setAberto(false)}>
+            <LayoutDashboard size={18} />
+            Dashboard
+          </Link>
 
-        <Link to="/ordens-servico">
-          <Wrench size={18} />
-          Ordens de Serviço
-        </Link>
+          <Link to="/clientes" onClick={() => setAberto(false)}>
+            <Users size={18} />
+            Clientes
+          </Link>
 
-        <Link to="/estoque">
-          <Package size={18} />
-          Estoque
-        </Link>
+          <Link to="/ordens-servico" onClick={() => setAberto(false)}>
+            <Wrench size={18} />
+            Ordens de Serviço
+          </Link>
 
-        <Link to="/vendas">
-          <ShoppingCart size={18} />
-          Vendas
-        </Link>
+          <Link to="/estoque" onClick={() => setAberto(false)}>
+            <Package size={18} />
+            Estoque
+          </Link>
 
-        <Link to="/financeiro">
-          <DollarSign size={18} />
-          Financeiro
-        </Link>
+          <Link to="/vendas" onClick={() => setAberto(false)}>
+            <ShoppingCart size={18} />
+            Vendas
+          </Link>
 
-        <Link to="/relatorios">
-          <BarChart3 size={18} />
-          Relatórios
-        </Link>
+          <Link to="/financeiro" onClick={() => setAberto(false)}>
+            <DollarSign size={18} />
+            Financeiro
+          </Link>
 
-        <Link to="/configuracoes">
-          <Settings size={18} />
-          Configurações
-        </Link>
-      </nav>
-    </aside>
+          <Link to="/relatorios" onClick={() => setAberto(false)}>
+            <BarChart3 size={18} />
+            Relatórios
+          </Link>
+
+          <Link to="/configuracoes" onClick={() => setAberto(false)}>
+            <Settings size={18} />
+            Configurações
+          </Link>
+        </nav>
+      </aside>
+    </>
   )
 }
 
