@@ -22,7 +22,7 @@ function Login() {
 
     try {
       const resposta = await axios.post(
-        'http://https://tech-line-backend.onrender.com/login',
+        'https://tech-line-backend.onrender.com/login',
         form
       )
 
