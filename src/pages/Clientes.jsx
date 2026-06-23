@@ -13,7 +13,7 @@ function Clientes() {
   })
 
   async function carregarClientes() {
-    const resposta = await axios.get('http://localhost:3000/clientes')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/clientes')
     setClientes(resposta.data)
   }
 
@@ -37,9 +37,9 @@ function Clientes() {
     }
 
     if (clienteEditando !== null) {
-      await axios.put(`http://localhost:3000/clientes/${clienteEditando}`, form)
+      await axios.put(`http://https://tech-line-backend.onrender.com/clientes/${clienteEditando}`, form)
     } else {
-      await axios.post('http://localhost:3000/clientes', form)
+      await axios.post('http://https://tech-line-backend.onrender.com/clientes', form)
     }
 
     setForm({
@@ -71,7 +71,7 @@ function Clientes() {
       return
     }
 
-    await axios.delete(`http://localhost:3000/clientes/${id}`)
+    await axios.delete(`http://https://tech-line-backend.onrender.com/clientes/${id}`)
     carregarClientes()
   }
 

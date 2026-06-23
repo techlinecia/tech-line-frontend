@@ -32,12 +32,12 @@ function Financeiro() {
   })
 
   async function carregarMovimentos() {
-    const resposta = await axios.get('http://localhost:3000/financeiro')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/financeiro')
     setMovimentos(resposta.data)
   }
 
   async function carregarContasFixas() {
-    const resposta = await axios.get('http://localhost:3000/contas-fixas')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/contas-fixas')
     setContasFixas(resposta.data)
   }
 
@@ -170,9 +170,9 @@ function Financeiro() {
     }
 
     if (editando !== null) {
-      await axios.put(`http://localhost:3000/financeiro/${editando}`, dados)
+      await axios.put(`http://https://tech-line-backend.onrender.com/financeiro/${editando}`, dados)
     } else {
-      await axios.post('http://localhost:3000/financeiro', dados)
+      await axios.post('http://https://tech-line-backend.onrender.com/financeiro', dados)
     }
 
     setForm({
@@ -205,9 +205,9 @@ function Financeiro() {
     }
 
     if (contaEditando !== null) {
-      await axios.put(`http://localhost:3000/contas-fixas/${contaEditando}`, dados)
+      await axios.put(`http://https://tech-line-backend.onrender.com/contas-fixas/${contaEditando}`, dados)
     } else {
-      await axios.post('http://localhost:3000/contas-fixas', dados)
+      await axios.post('http://https://tech-line-backend.onrender.com/contas-fixas', dados)
     }
 
     setFormConta({
@@ -257,21 +257,21 @@ function Financeiro() {
   async function excluirMovimento(id) {
     if (!confirm('Deseja excluir este lançamento?')) return
 
-    await axios.delete(`http://localhost:3000/financeiro/${id}`)
+    await axios.delete(`http://https://tech-line-backend.onrender.com/financeiro/${id}`)
     carregarMovimentos()
   }
 
   async function excluirContaFixa(id) {
     if (!confirm('Deseja excluir esta conta fixa?')) return
 
-    await axios.delete(`http://localhost:3000/contas-fixas/${id}`)
+    await axios.delete(`http://https://tech-line-backend.onrender.com/contas-fixas/${id}`)
     carregarContasFixas()
   }
 
   async function marcarContaComoPago(conta) {
     const novoStatus = statusConta(conta) === 'Pago' ? 'Pendente' : 'Pago'
 
-    await axios.put(`http://localhost:3000/contas-fixas/${conta.id}`, {
+    await axios.put(`http://https://tech-line-backend.onrender.com/contas-fixas/${conta.id}`, {
       ...conta,
       status: novoStatus
     })
@@ -280,7 +280,7 @@ function Financeiro() {
   }
 
   async function marcarMovimentoComoPago(item) {
-    await axios.put(`http://localhost:3000/financeiro/${item.id}`, {
+    await axios.put(`http://https://tech-line-backend.onrender.com/financeiro/${item.id}`, {
       ...item,
       status: 'Pago'
     })
@@ -289,7 +289,7 @@ function Financeiro() {
   }
 
   async function lancarContaNoFinanceiro(conta) {
-    await axios.post('http://localhost:3000/financeiro', {
+    await axios.post('http://https://tech-line-backend.onrender.com/financeiro', {
       tipo: 'Saída',
       descricao: `Conta fixa - ${conta.descricao}`,
       categoria: conta.categoria || 'Conta fixa',
@@ -301,7 +301,7 @@ function Financeiro() {
       data_movimento: hoje
     })
 
-    await axios.put(`http://localhost:3000/contas-fixas/${conta.id}`, {
+    await axios.put(`http://https://tech-line-backend.onrender.com/contas-fixas/${conta.id}`, {
       ...conta,
       status: 'Pago'
     })
@@ -326,7 +326,7 @@ function Financeiro() {
 
     const novasPagas = pagas + 1
 
-    await axios.put(`http://localhost:3000/financeiro/${item.id}`, {
+    await axios.put(`http://https://tech-line-backend.onrender.com/financeiro/${item.id}`, {
       ...item,
       parcelas_pagas: novasPagas,
       status: novasPagas >= total ? 'Pago' : 'Pendente'

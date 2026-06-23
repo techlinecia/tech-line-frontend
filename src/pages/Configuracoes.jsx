@@ -25,7 +25,7 @@ function Configuracoes() {
   })
 
   async function carregarConfiguracoes() {
-    const resposta = await axios.get('http://localhost:3000/configuracoes')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/configuracoes')
 
     if (resposta.data && resposta.data.id) {
       setConfigId(resposta.data.id)
@@ -45,7 +45,7 @@ function Configuracoes() {
   }
 
   async function carregarUsuarios() {
-    const resposta = await axios.get('http://localhost:3000/usuarios')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/usuarios')
     setUsuarios(resposta.data)
   }
 
@@ -72,9 +72,9 @@ function Configuracoes() {
     event.preventDefault()
 
     if (configId) {
-      await axios.put(`http://localhost:3000/configuracoes/${configId}`, config)
+      await axios.put(`http://https://tech-line-backend.onrender.com/configuracoes/${configId}`, config)
     } else {
-      const resposta = await axios.post('http://localhost:3000/configuracoes', config)
+      const resposta = await axios.post('http://https://tech-line-backend.onrender.com/configuracoes', config)
       setConfigId(resposta.data.id)
     }
 
@@ -91,7 +91,7 @@ function Configuracoes() {
     }
 
     try {
-      await axios.post('http://localhost:3000/usuarios', usuarioForm)
+      await axios.post('http://https://tech-line-backend.onrender.com/usuarios', usuarioForm)
 
       setUsuarioForm({
         nome: '',
@@ -110,7 +110,7 @@ function Configuracoes() {
   async function excluirUsuario(id) {
     if (!confirm('Deseja excluir este usuário?')) return
 
-    await axios.delete(`http://localhost:3000/usuarios/${id}`)
+    await axios.delete(`http://https://tech-line-backend.onrender.com/usuarios/${id}`)
     carregarUsuarios()
   }
 

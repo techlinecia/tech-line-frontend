@@ -34,22 +34,22 @@ function Vendas() {
   ]
 
   async function carregarVendas() {
-    const resposta = await axios.get('http://localhost:3000/vendas')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/vendas')
     setVendas(resposta.data)
   }
 
   async function carregarClientes() {
-    const resposta = await axios.get('http://localhost:3000/clientes')
+    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/clientes')
     setClientes(resposta.data)
   }
 
   async function carregarProdutos() {
     try {
-      const resposta = await axios.get('http://localhost:3000/estoque')
+      const resposta = await axios.get('http://https://tech-line-backend.onrender.com/estoque')
       setProdutos(resposta.data)
     } catch (erro) {
       try {
-        const resposta = await axios.get('http://localhost:3000/produtos')
+        const resposta = await axios.get('http://https://tech-line-backend.onrender.com/produtos')
         setProdutos(resposta.data)
       } catch {
         setProdutos([])
@@ -236,12 +236,12 @@ function Vendas() {
 
     if (editando !== null) {
       await axios.put(
-        `http://localhost:3000/vendas/${editando}`,
+        `http://https://tech-line-backend.onrender.com/vendas/${editando}`,
         form
       )
     } else {
       await axios.post(
-        'http://localhost:3000/vendas',
+        'http://https://tech-line-backend.onrender.com/vendas',
         form
       )
     }
@@ -286,7 +286,7 @@ function Vendas() {
 
     if (!confirmar) return
 
-    await axios.delete(`http://localhost:3000/vendas/${id}`)
+    await axios.delete(`http://https://tech-line-backend.onrender.com/vendas/${id}`)
     carregarVendas()
   }
 

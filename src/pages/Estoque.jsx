@@ -28,7 +28,7 @@ function Estoque() {
   ]
 
   async function carregarProdutos() {
-    const resposta = await axios.get('http://localhost:3000/estoque')
+    const resposta = await axios.get('https://tech-line-backend.onrender.com/estoque')
     setProdutos(resposta.data)
   }
 
@@ -99,9 +99,9 @@ function Estoque() {
     }
 
     if (produtoEditando !== null) {
-      await axios.put(`http://localhost:3000/estoque/${produtoEditando}`, dadosProduto)
+      await axios.put(`http://https://tech-line-backend.onrender.com/estoque/${produtoEditando}`, dadosProduto)
     } else {
-      await axios.post('http://localhost:3000/estoque', dadosProduto)
+      await axios.post('http://https://tech-line-backend.onrender.com/estoque', dadosProduto)
     }
 
     setForm({
@@ -140,7 +140,7 @@ function Estoque() {
 
     if (!confirmar) return
 
-    await axios.delete(`http://localhost:3000/estoque/${id}`)
+    await axios.delete(`http://https://tech-line-backend.onrender.com/estoque/${id}`)
     carregarProdutos()
   }
 
