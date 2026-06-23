@@ -874,14 +874,16 @@ th {
   }
 }
 @media (max-width: 768px) {
-
   .sidebar h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    font-size: 22px;
+    display: none !important;
   }
 
+  .sidebar {
+    padding-top: 70px;
+  }
+
+  .header {
+    top: 0 !important;
+    padding-left: 78px;
+  }
 }
