@@ -585,3 +585,175 @@ th {
 .user-menu button {
   width: 100%;
 }
+/* ===== AJUSTES MOBILE TECH LINE ===== */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 14px;
+    border-right: none;
+    border-bottom: 1px solid #1e293b;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+
+  .menu a {
+    min-width: max-content;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .header {
+    height: auto;
+    padding: 14px;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .header-actions input {
+    width: 100%;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .cards,
+  .stats-grid,
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .stat-card {
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  input,
+  select,
+  button,
+  .btn-primary {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header input {
+    max-width: 100%;
+  }
+
+  .table-card {
+    padding: 14px;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 760px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .btn-edit,
+  .btn-danger {
+    margin: 4px 0;
+    width: 100%;
+  }
+
+  .login-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .login-card h1 {
+    font-size: 28px;
+  }
+
+  .user-menu {
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+  }
+
+  .menu a {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+}
