@@ -34,22 +34,22 @@ function Vendas() {
   ]
 
   async function carregarVendas() {
-    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/vendas')
+    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/vendas')
     setVendas(resposta.data)
   }
 
   async function carregarClientes() {
-    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/clientes')
+    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/clientes')
     setClientes(resposta.data)
   }
 
   async function carregarProdutos() {
     try {
-      const resposta = await axios.get('http://https://tech-line-backend.onrender.com/estoque')
+      const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/estoque')
       setProdutos(resposta.data)
     } catch (erro) {
       try {
-        const resposta = await axios.get('http://https://tech-line-backend.onrender.com/produtos')
+        const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/produtos')
         setProdutos(resposta.data)
       } catch {
         setProdutos([])
@@ -236,12 +236,12 @@ function Vendas() {
 
     if (editando !== null) {
       await axios.put(
-        `http://https://tech-line-backend.onrender.com/vendas/${editando}`,
+        `https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/vendas/${editando}`,
         form
       )
     } else {
       await axios.post(
-        'http://https://tech-line-backend.onrender.com/vendas',
+        'https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/vendas',
         form
       )
     }
@@ -286,7 +286,7 @@ function Vendas() {
 
     if (!confirmar) return
 
-    await axios.delete(`http://https://tech-line-backend.onrender.com/vendas/${id}`)
+    await axios.delete(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/vendas/${id}`)
     carregarVendas()
   }
 

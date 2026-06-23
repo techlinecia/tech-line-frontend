@@ -29,17 +29,17 @@ function OrdensServico() {
   })
 
   async function carregarOrdens() {
-    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/ordens')
+    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/ordens')
     setOrdens(resposta.data)
   }
 
   async function carregarClientes() {
-    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/clientes')
+    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/clientes')
     setClientes(resposta.data)
   }
 
   async function carregarConfiguracao() {
-    const resposta = await axios.get('http://https://tech-line-backend.onrender.com/configuracoes')
+    const resposta = await axios.get('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/configuracoes')
     setConfiguracao(resposta.data || {})
   }
 
@@ -112,9 +112,9 @@ function OrdensServico() {
     }
 
     if (ordemEditando !== null) {
-      await axios.put(`http://https://tech-line-backend.onrender.com/ordens/${ordemEditando}`, dadosParaSalvar)
+      await axios.put(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/ordens/${ordemEditando}`, dadosParaSalvar)
     } else {
-      await axios.post('http://https://tech-line-backend.onrender.com/ordens', dadosParaSalvar)
+      await axios.post('https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/ordens', dadosParaSalvar)
     }
 
     setForm({
@@ -169,7 +169,7 @@ function OrdensServico() {
   async function excluirOS(id) {
     if (!confirm('Tem certeza que deseja excluir esta OS?')) return
 
-    await axios.delete(`http://https://tech-line-backend.onrender.com/ordens/${id}`)
+    await axios.delete(`https://tech-line-backend.onrender.comhttps://tech-line-backend.onrender.com/ordens/${id}`)
     carregarOrdens()
   }
 
