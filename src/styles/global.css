@@ -873,3 +873,15 @@ th {
     padding-top: 70px;
   }
 }
+@media (max-width: 768px) {
+
+  .sidebar h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 22px;
+  }
+
+}
