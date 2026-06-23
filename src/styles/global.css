@@ -585,175 +585,194 @@ th {
 .user-menu button {
   width: 100%;
 }
-/* ===== AJUSTES MOBILE TECH LINE ===== */
+/* ===== MOBILE MELHORADO ===== */
 
 @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-
   .app {
-    flex-direction: column;
+    display: block;
   }
 
   .sidebar {
-    width: 100%;
-    min-height: auto;
-    padding: 14px;
-    border-right: none;
-    border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 12px;
   }
 
   .sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 14px;
-    text-align: center;
+    display: none;
   }
 
   .menu {
+    display: flex;
     flex-direction: row;
     overflow-x: auto;
     gap: 8px;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: none;
   }
 
   .menu a {
-    min-width: max-content;
-    padding: 10px 12px;
+    flex: 0 0 auto;
+    padding: 10px 14px;
     font-size: 13px;
+    border-radius: 999px;
+    background: #111827;
+    border: 1px solid #1e293b;
+  }
+
+  .main-area {
+    min-height: auto;
   }
 
   .header {
-    height: auto;
-    padding: 14px;
-    gap: 12px;
-    align-items: stretch;
+    position: sticky;
+    top: 54px;
+    z-index: 40;
+    padding: 12px 14px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header h2 {
+    font-size: 14px;
+  }
+
+  .header p {
+    display: none;
   }
 
   .header-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    flex-direction: row;
+    width: auto;
   }
 
   .header-actions input {
-    width: 100%;
+    display: none;
   }
 
   .content {
-    padding: 16px;
+    padding: 14px;
   }
 
   .content h1 {
-    font-size: 26px;
+    font-size: 24px;
+    line-height: 1.2;
   }
 
   .dashboard-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
   }
 
   .cards,
   .stats-grid,
   .dashboard-grid {
     grid-template-columns: 1fr !important;
-    gap: 14px;
+    gap: 12px;
   }
 
   .card {
-    padding: 18px;
-    border-radius: 14px;
+    padding: 16px;
+    border-radius: 16px;
   }
 
-  .card:hover {
-    transform: none;
+  .card strong {
+    font-size: 24px;
   }
 
   .stat-card {
+    flex-direction: row;
     align-items: center;
   }
 
+  .stat-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
   form {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   input,
   select,
-  button,
-  .btn-primary {
-    width: 100%;
+  textarea {
     font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  button,
+  .btn-primary,
+  .btn-edit,
+  .btn-danger {
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .table-card {
+    padding: 12px;
+    border-radius: 16px;
   }
 
   .table-header {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
-  .table-header input {
-    max-width: 100%;
-  }
-
-  .table-card {
-    padding: 14px;
-    overflow-x: auto;
+  .table-header h2 {
+    font-size: 18px;
   }
 
   table {
-    min-width: 760px;
+    min-width: 850px;
   }
 
   th,
   td {
+    font-size: 12px;
     padding: 10px;
-    font-size: 13px;
     white-space: nowrap;
   }
 
-  .btn-edit,
-  .btn-danger {
-    margin: 4px 0;
-    width: 100%;
+  .badge {
+    display: inline-block;
+  }
+
+  .login-page {
+    padding: 14px;
   }
 
   .login-card {
-    padding: 26px 20px;
-    border-radius: 18px;
-  }
-
-  .login-card h1 {
-    font-size: 28px;
-  }
-
-  .user-menu {
-    right: 10px;
-    left: 10px;
-    width: auto;
+    padding: 24px 18px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .content {
-    padding: 12px;
+    padding: 10px;
   }
 
   .card {
     padding: 14px;
   }
 
-  .content h1 {
-    font-size: 24px;
-  }
-
-  .sidebar h2 {
-    font-size: 18px;
-  }
-
   .menu a {
     font-size: 12px;
-    padding: 9px 10px;
+    padding: 9px 12px;
+  }
+
+  .header {
+    top: 48px;
   }
 }
